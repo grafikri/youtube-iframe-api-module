@@ -1,0 +1,35 @@
+{
+  "name": "youtube-iframe-api-module",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "youtube",
+    "iframe-api",
+    "youtube-api",
+    "typescript",
+    "esm",
+    "browser",
+    "npm-package",
+    "video-player",
+    "youtube-player",
+    "youtube-wrapper"
+  ],
+  "author": "Serhan Coşkun",
+  "license": "ISC",
+  "description": "A lightweight TypeScript and JavaScript wrapper for the YouTube IFrame API, making it easy to use YouTube videos in npm-based projects and modern browser environments."
+}
