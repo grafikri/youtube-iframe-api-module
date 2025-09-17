@@ -10,17 +10,44 @@ declare global {
   const YT: any;
 }
 
-const loadApi = () => {
+const src = "https://www.youtube.com/iframe_api"
+
+
+const isScriptPresent = () => {
+  const isAdded = !!document.querySelector(`script[src="${src}"]`);
+  return isAdded
+}
+
+
+
+
+const addScript = () => {
   const tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
+  tag.src = src;
   const firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
 }
 
 
-export const onYouTubeIframeAPIReady = (callback: () => void) => {
+const arrCallbacks: Function[] = []
+
+
+const defineCallback = () => {
   window.onYouTubeIframeAPIReady = () => {
-    callback()
+    arrCallbacks.forEach(callback => callback())
   }
-  loadApi()
+}
+
+export const loadScript = (callback: () => void) => {
+  if (!!window.YT) {
+    callback()
+    return
+  }
+
+  arrCallbacks.push(callback)
+
+  if (!isScriptPresent()) {
+    defineCallback()
+    addScript()
+  }
 }
