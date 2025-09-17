@@ -8,7 +8,6 @@ This is an npm module version of the YouTube Player API for IFrame embeds. It au
 npm install youtube-iframe-api-module
 ```
 
-The `onYouTubeIframeAPIReady()` method is called when the YouTube IFrame API has finished loading and is ready to be used.
 
 ```js
 import { loadScript } from 'youtube-iframe-api-module';
