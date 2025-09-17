@@ -13,7 +13,6 @@ The `onYouTubeIframeAPIReady()` method is called when the YouTube IFrame API has
 ```js
 import { loadScript } from 'youtube-iframe-api-module';
 
-
 loadScript(() => {
   // Player 1
   const player = new YT.Player('player-one', {
