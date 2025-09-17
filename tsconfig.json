@@ -8,6 +8,14 @@
     "strict": true
   },
   "include": [
-    "src"
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "jest.config.js",
+    "*.config.js"
   ]
 }
