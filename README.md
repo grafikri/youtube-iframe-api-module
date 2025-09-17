@@ -8,22 +8,28 @@ This is an npm module version of the YouTube Player API for IFrame embeds. It au
 npm install youtube-iframe-api-module
 ```
 
-
-The `onYouTubeIframeAPIReady()` method is called when the YouTube IFrame API has loaded and is ready to use.
+The `onYouTubeIframeAPIReady()` method is called when the YouTube IFrame API has finished loading and is ready to be used.
 
 ```js
-import { onYouTubeIframeAPIReady } from 'youtube-iframe-api-module';
+import { loadScript } from 'youtube-iframe-api-module';
 
-onYouTubeIframeAPIReady(() => {
-  // Create a new YouTube player with IFrame API
-  const player = new YT.Player('player', {
+
+loadScript(() => {
+  // Player 1
+  const player = new YT.Player('player-one', {
     height: '390',
     width: '640',
-    videoId: 'M7lc1UVf-VE',
-    playerVars: {
-      playsinline: 1
-    },
+    videoId: 'M7lc1UVf-VE'
   });
-});
+})
+
+loadScript(() => {
+  // Player 2
+  const player = new YT.Player('player-two', {
+    height: '390',
+    width: '640',
+    videoId: 'M7lc1UVf-VE'
+  });
+})
 ```
 
